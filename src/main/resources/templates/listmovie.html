@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/Stylesheet.css">
+
+</head>
+<body>
+<a href="/addmovie">Add a Movie</a><br />
+<table>
+    <tr>
+
+        <th>Title</th>
+        <th>Year</th>
+        <th>Plot</th>
+        <th>Director</th>
+    </tr>
+    <tbody>
+    <tr th:each="eachmovie:${movie}">
+        <td th:text="${eachmovie.Title}"></td>
+        <td th:text="${eachmovie.Year}"></td>
+        <td th:text="${eachmovie.Plot}"></td>
+        <td th:text="${eachmovie.Director}"></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${eachmovie.id})}">Update</a> -
+            <a th:href="@{/detail/{id}(id=${eachmovie.id})}">Details</a> -
+            <a th:href="@{/update/{id}(id=${eachmovie.id})}">Delete</a>
+
+        </td>
+    </tr>
+
+
+    </tbody>
+</table>
+</body>
+</html>

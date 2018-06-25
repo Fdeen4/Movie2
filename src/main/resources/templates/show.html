@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/">Show All Movies</a><br  />
+Title:<span th:text="${movie.title" ></span><br />
+Year :<p th:text="${movie.year}" ></p>
+Plot :<span th:text="${movie.plot}" ></span><br />
+Director :<span th:text="${movie.director}" ></span><br />
+<a th:href="@{/delete/{id}(id=${movie.id})}">Delete this course</a>
+
+</body>
+</html>
